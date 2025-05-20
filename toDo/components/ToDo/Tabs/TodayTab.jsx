@@ -11,10 +11,10 @@ export default function TodayTab() {
 
       const taskMenus = {
         //The int for each of these will eventuall be replaced with the number of tasks in each category from mongoDb
-        All: 0,
-        Open: 0,
-        Closed: 0,
-        WIP: 0,
+        All: [0],
+        Open: [0],
+        Closed: [0],
+        WIP: [0],
       };
 
   return (
@@ -41,7 +41,6 @@ export default function TodayTab() {
                 <Text style={styles.taskCount}>{value}</Text>
                 </TouchableOpacity>
             ))}
-
         </View>
 
     </View>
