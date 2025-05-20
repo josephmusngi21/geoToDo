@@ -1,77 +1,78 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import TodayTab from "./Tabs/TodayTab";
 
 export default function ToDo() {
-    const [currentMenu, setCurrentMenu] = useState("Locations");
-  
-    const Today = () => {
+    const [currentMenu, setCurrentMenu] = useState("Today");
 
-        return (
-            <View style={styles.todayContainer}>
+    const menus = [
+        { key: "Locations", label: "Locations" },
+        { key: "Today", label: "Today's Task" },
+        { key: "Future", label: "Future Task" },
+    ];
 
+    return (
+        <View style={styles.container}>
+            <View style={styles.taskContainer}>
+                {menus.map((menu) => (
+                    <TouchableOpacity
+                        key={menu.key}
+                        style={styles.task}
+                        onPress={() => setCurrentMenu(menu.key)}
+                    >
+                        <Text
+                            style={[
+                                styles.taskText,
+                                currentMenu === menu.key
+                                    ? styles.selectedTaskText
+                                    : styles.unselectedTaskText,
+                            ]}
+                        >
+                            {menu.label}
+                        </Text>
+                    </TouchableOpacity>
+                ))}
             </View>
-        )
-    };
 
-        const Locations = () => {
+                <TodayTab />
 
-        return (
-            <View style={styles.locationsContainer}>
-
-            </View>
-        )
-    };
-
-        const Future = () => {
-
-        return (
-            <View style={styles.FutureContainer}>
-
-            </View>
-        )
-    };
-
-  return (
-    <View style={styles.container}>
-      
-        <View style={styles.taskContainer}>
-            <TouchableOpacity style={styles.task}>
-            <Text style={styles.taskText}>Locations</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.task}>
-            <Text style={styles.taskText}>Today&apos;s Task</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.task}>
-            <Text style={styles.taskText}>Future Task</Text>
-            </TouchableOpacity>
-      </View>
-
-
-    </View>
-  );
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "column",
+        alignItems: "center",
     },
     taskContainer: {
+        height: 70,
+        display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        paddingVertical: 10,
-        borderBottomWidth: 1,
-        backgroundColor: "lightblue", 
+        width: "94%",
+        borderBottomWidth: 0.3,
     },
     task: {
-        padding: 10,
-        backgroundColor: "#e0e0e0",
         borderRadius: 5,
-        marginHorizontal: 5,
+        marginHorizontal: 2,
     },
     taskText: {
-        fontSize: 16,
-        color: "#333",
+        fontSize: 20,
+        fontWeight: "500",
+        padding: 3,
+        marginHorizontal: 7,
+        borderBottomWidth: 2,
+        borderBottomColor: "transparent",
+    },
+    selectedTaskText: {
+        color: "#000",
+        borderBottomColor: "#000",
+        borderBottomWidth: 1.4,
+    },
+    unselectedTaskText: {
+        color: "#aaa",
     },
 });
