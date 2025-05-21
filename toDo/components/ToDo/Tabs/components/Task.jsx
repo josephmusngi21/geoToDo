@@ -1,4 +1,3 @@
-import { Background } from "@react-navigation/elements";
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native-web";
 
