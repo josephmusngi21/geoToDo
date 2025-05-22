@@ -1,0 +1,258 @@
+[
+    {
+        // Task 1
+        "title": "Buy Groceries",
+        "description": "Purchase milk, eggs, and bread from the supermarket.",
+        "date": "2024-06-10",
+        "time": "09:30",
+        "status": "open"
+    },
+    {
+        // Task 2
+        "title": "Team Meeting",
+        "description": "Weekly sync with the development team.",
+        "date": "2024-06-11",
+        "time": "14:00",
+        "status": "wip"
+    },
+    {
+        // Task 3
+        "title": "Dentist Appointment",
+        "description": "Routine dental check-up and cleaning.",
+        "date": "2024-06-12",
+        "time": "11:15",
+        "status": "closed"
+    },
+    {
+        // Task 4
+        "title": "Submit Project Report",
+        "description": "Finalize and submit the monthly project report.",
+        "date": "2024-06-13",
+        "time": "16:45",
+        "status": "open"
+    },
+    {
+        // Task 5
+        "title": "Call Mom",
+        "description": "Catch up with mom over the phone.",
+        "date": "2024-06-14",
+        "time": "19:00",
+        "status": "wip"
+    },
+    {
+        // Task 6
+        "title": "Read Book",
+        "description": "Finish reading the last two chapters of the novel.",
+        "date": "2024-06-15",
+        "time": "21:00",
+        "status": "open"
+    },
+    {
+        // Task 7
+        "title": "Gym Session",
+        "description": "Attend the morning workout session at the gym.",
+        "date": "2024-06-16",
+        "time": "07:00",
+        "status": "closed"
+    },
+    {
+        // Task 8
+        "title": "Doctor Follow-up",
+        "description": "Follow-up appointment with the physician.",
+        "date": "2024-06-17",
+        "time": "10:30",
+        "status": "wip"
+    },
+    {
+        // Task 9
+        "title": "Plan Vacation",
+        "description": "Research and plan the summer vacation itinerary.",
+        "date": "2024-06-18",
+        "time": "18:00",
+        "status": "open"
+    },
+    {
+        // Task 10
+        "title": "Car Service",
+        "description": "Take the car for scheduled maintenance.",
+        "date": "2024-06-19",
+        "time": "13:45",
+        "status": "closed"
+    },
+    {
+        // Task 11
+        "title": "Write Blog Post",
+        "description": "Draft and publish a new blog post on productivity.",
+        "date": "2024-06-20",
+        "time": "20:00",
+        "status": "open"
+    },
+    {
+        // Task 12
+        "title": "Laundry",
+        "description": "Wash and fold clothes.",
+        "date": "2024-06-21",
+        "time": "17:30",
+        "status": "wip"
+    },
+    {
+        // Task 13
+        "title": "Grocery Inventory",
+        "description": "Check pantry and fridge for needed items.",
+        "date": "2024-06-22",
+        "time": "08:45",
+        "status": "closed"
+    },
+    {
+        // Task 14
+        "title": "Yoga Class",
+        "description": "Attend evening yoga session.",
+        "date": "2024-06-23",
+        "time": "18:30",
+        "status": "open"
+    },
+    {
+        // Task 15
+        "title": "Update Resume",
+        "description": "Add recent experience to resume.",
+        "date": "2024-06-24",
+        "time": "15:00",
+        "status": "wip"
+    },
+    {
+        // Task 16
+        "title": "Pay Bills",
+        "description": "Pay electricity and internet bills online.",
+        "date": "2024-06-25",
+        "time": "12:00",
+        "status": "closed"
+    },
+    {
+        // Task 17
+        "title": "Walk the Dog",
+        "description": "Evening walk in the park with the dog.",
+        "date": "2024-06-26",
+        "time": "19:30",
+        "status": "open"
+    },
+    {
+        // Task 18
+        "title": "Online Course",
+        "description": "Complete module 3 of the online course.",
+        "date": "2024-06-27",
+        "time": "22:00",
+        "status": "wip"
+    },
+    {
+        // Task 19
+        "title": "Guitar Practice",
+        "description": "Practice new chords for 30 minutes.",
+        "date": "2024-06-28",
+        "time": "16:00",
+        "status": "closed"
+    },
+    {
+        // Task 20
+        "title": "Organize Desk",
+        "description": "Clean and organize the work desk.",
+        "date": "2024-06-29",
+        "time": "10:00",
+        "status": "open"
+    },
+    {
+        // Task 21
+        "title": "Movie Night",
+        "description": "Watch a new release with friends.",
+        "date": "2024-06-30",
+        "time": "21:30",
+        "status": "wip"
+    },
+    {
+        // Task 22
+        "title": "Backup Files",
+        "description": "Backup important documents to cloud storage.",
+        "date": "2024-07-01",
+        "time": "13:00",
+        "status": "closed"
+    },
+    {
+        // Task 23
+        "title": "Meal Prep",
+        "description": "Prepare meals for the upcoming week.",
+        "date": "2024-07-02",
+        "time": "17:00",
+        "status": "open"
+    },
+    {
+        // Task 24
+        "title": "Water Plants",
+        "description": "Water all indoor and outdoor plants.",
+        "date": "2024-07-03",
+        "time": "08:00",
+        "status": "wip"
+    },
+    {
+        // Task 25
+        "title": "Renew Library Books",
+        "description": "Renew borrowed books online.",
+        "date": "2024-07-04",
+        "time": "11:30",
+        "status": "closed"
+    },
+    {
+        // Task 26
+        "title": "Brainstorm Ideas",
+        "description": "Brainstorm ideas for the new project.",
+        "date": "2024-07-05",
+        "time": "15:45",
+        "status": "open"
+    },
+    {
+        // Task 27
+        "title": "Grocery Shopping",
+        "description": "Buy vegetables and fruits for the week.",
+        "date": "2024-07-06",
+        "time": "09:15",
+        "status": "wip"
+    },
+    {
+        // Task 28
+        "title": "Car Wash",
+        "description": "Wash and vacuum the car.",
+        "date": "2024-07-07",
+        "time": "14:30",
+        "status": "closed"
+    },
+    {
+        // Task 29
+        "title": "Birthday Gift",
+        "description": "Buy a birthday gift for Sarah.",
+        "date": "2024-07-08",
+        "time": "18:15",
+        "status": "open"
+    },
+    {
+        // Task 30
+        "title": "Check Emails",
+        "description": "Respond to important emails.",
+        "date": "2024-07-09",
+        "time": "12:45",
+        "status": "wip"
+    },
+    {
+        // Task 31
+        "title": "Meditation",
+        "description": "Morning meditation session.",
+        "date": "2024-07-10",
+        "time": "07:30",
+        "status": "closed"
+    },
+    {
+        // Task 32
+        "title": "Grocery List",
+        "description": "Make a list of groceries for the weekend.",
+        "date": "2024-07-11",
+        "time": "20:30",
+        "status": "open"
+    }
+]
