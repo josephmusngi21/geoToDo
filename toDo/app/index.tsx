@@ -8,9 +8,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <User />
-      <TodayTab />
       <ToDo />
-      <Task task={null} />
     </View>
   );
 }
