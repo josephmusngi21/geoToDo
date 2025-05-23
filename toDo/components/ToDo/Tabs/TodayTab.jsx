@@ -55,7 +55,15 @@ export default function TodayTab() {
             ))}
         </View>
             
-        <View style={styles.taskContainer}>
+        {/* <ScrollView contentContainerStyle={styles.scrollContent} style={styles.taskContainer}>
+          {examples.map((task, index) => (
+                <Task
+                    key={index}
+                    task={task}
+                />
+            ))}
+        </ScrollView> */}
+        {/* <View style={styles.taskContainer}>
             {examples.map((task, index) => (
                 <Task
                     key={index}
@@ -63,7 +71,7 @@ export default function TodayTab() {
                 />
             ))}
           
-        </View>
+        </View> */}
 
     </View>
   );
@@ -135,14 +143,15 @@ const styles = StyleSheet.create({
     marginLeft: 6,
   },
   taskContainer: {
+    width: "100%",
+    paddingVertical: 7,
+  },
+  scrollContent: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    paddingVertical: 7,
-    // Remove overflow: "scroll", as it's not supported in React Native
-    // overflow: "scroll",
   },
 
 });
