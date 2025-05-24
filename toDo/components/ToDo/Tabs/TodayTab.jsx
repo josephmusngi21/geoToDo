@@ -63,7 +63,7 @@ export default function TodayTab() {
                 />
             ))}
         </ScrollView> */}
-        {/* <View style={styles.taskContainer}>
+        <View style={styles.taskContainer}>
             {examples.map((task, index) => (
                 <Task
                     key={index}
@@ -71,7 +71,7 @@ export default function TodayTab() {
                 />
             ))}
           
-        </View> */}
+        </View>
 
     </View>
   );
