@@ -1,9 +1,14 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import Task from "./components/Task";
 
-import examples from './components/tasks.json'
-
+import examples from "./components/tasks.json";
 
 export default function TodayTab() {
   const today = new Date();
@@ -13,73 +18,60 @@ export default function TodayTab() {
     day: "numeric",
   });
 
-      // Categorize tasks by status
-      const tasksByStatus = {
-        All: examples,
-        Open: examples.filter(task => task.status.toLowerCase() === "open"),
-        Closed: examples.filter(task => task.status.toLowerCase() === "closed"),
-        WIP: examples.filter(task => task.status.toLowerCase() === "wip"),
-      };
+  // Categorize tasks by status
+  const tasksByStatus = {
+    All: examples,
+    Open: examples.filter((task) => task.status.toLowerCase() === "open"),
+    Closed: examples.filter((task) => task.status.toLowerCase() === "closed"),
+    WIP: examples.filter((task) => task.status.toLowerCase() === "wip"),
+  };
 
-      // For the menu counts
-      const taskMenus = {
-        All: tasksByStatus.All.length,
-        Open: tasksByStatus.Open.length,
-        Closed: tasksByStatus.Closed.length,
-        WIP: tasksByStatus.WIP.length,
-      };
+  // For the menu counts
+  const taskMenus = {
+    All: tasksByStatus.All.length,
+    Open: tasksByStatus.Open.length,
+    Closed: tasksByStatus.Closed.length,
+    WIP: tasksByStatus.WIP.length,
+  };
 
   return (
     <View style={styles.container}>
-
       <View style={styles.infoContainer}>
         <View style={styles.info}>
           <Text style={styles.infoText}>Today&#39;s Tasks</Text>
           <Text style={styles.dateText}>{dateString}</Text>
         </View>
 
-          <TouchableOpacity style={styles.addButton}>
-            <Text style={styles.addText}>Add Task</Text>
-          </TouchableOpacity>
+        <TouchableOpacity style={styles.addButton}>
+          <Text style={styles.addText}>Add Task</Text>
+        </TouchableOpacity>
       </View>
 
+      <View style={styles.collectionContainer}>
         <View style={styles.countContainer}>
-            {Object.entries(taskMenus).map(([key, value]) => (
-                <TouchableOpacity
-                key={key}
-                style={styles.task}
-                >
-                <Text style={styles.taskText}>{key}</Text>
-                <Text style={styles.taskCount}>{value}</Text>
-                </TouchableOpacity>
-            ))}
-        </View>
-            
-        {/* <ScrollView contentContainerStyle={styles.scrollContent} style={styles.taskContainer}>
-          {examples.map((task, index) => (
-                <Task
-                    key={index}
-                    task={task}
-                />
-            ))}
-        </ScrollView> */}
-        <View style={styles.taskContainer}>
-            {examples.map((task, index) => (
-                <Task
-                    key={index}
-                    task={task}
-                />
-            ))}
-          
+          {Object.entries(taskMenus).map(([key, value]) => (
+            <TouchableOpacity key={key} style={styles.task}>
+              <Text style={styles.taskText}>{key}</Text>
+              <Text style={styles.taskCount}>{value}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
 
+        <ScrollView style={styles.taskContainer}>
+         
+            {examples.map((task, index) => (
+              <Task key={index} task={task} />
+            ))}
+    
+        </ScrollView>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { 
-    display: "flex", 
+  container: {
+    display: "flex",
     flexDirection: "column",
     width: "93%",
     marginHorizontal: 10,
@@ -90,9 +82,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    paddingVertical: 7,
-    marginVertical: 24,
-
+    paddingVertical: 11,
+    marginTop: 12,
+    height: 70,
   },
   info: {
     paddingLeft: 20,
@@ -126,6 +118,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     paddingVertical: 7,
+    height: 38,
   },
   task: {
     display: "flex",
@@ -144,7 +137,7 @@ const styles = StyleSheet.create({
   },
   taskContainer: {
     width: "100%",
-    paddingVertical: 7,
+    height: 500,
   },
   scrollContent: {
     display: "flex",
@@ -153,5 +146,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
   },
-
+  collectionContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    height: 700,
+    borderRadius: 10,
+  },
+  scrollContainer: {
+    flex: 1,
+    width: "100%",
+  },
 });
