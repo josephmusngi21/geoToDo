@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingHorizontal: 16,
         justifyContent: "space-between",
-        height: 73,
+        height: 54,
     },
     userImg: {
         width: 40,

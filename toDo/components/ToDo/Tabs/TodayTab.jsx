@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     paddingVertical: 11,
-    marginTop: 12,
+    marginTop: 1,
     height: 70,
   },
   info: {
@@ -137,7 +137,8 @@ const styles = StyleSheet.create({
   },
   taskContainer: {
     width: "100%",
-    height: 500,
+    height: 400,
+    flex: 1,
   },
   scrollContent: {
     display: "flex",
@@ -145,6 +146,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
+    flex: 1,
   },
   collectionContainer: {
     display: "flex",
@@ -154,9 +156,5 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 700,
     borderRadius: 10,
-  },
-  scrollContainer: {
-    flex: 1,
-    width: "100%",
   },
 });
