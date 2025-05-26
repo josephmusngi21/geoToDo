@@ -1,9 +1,13 @@
+require('dotenv').config();
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGO_URI || null;
 
+if (!uri) {
+  console.error("Error: MONGODB_URI environment variable is not set.");
+  process.exit(1);
+}
 
-// Creates a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -12,17 +16,22 @@ const client = new MongoClient(uri, {
   },
 });
 
-
 async function run() {
-    try {
-        // Connects to the client to the server
-        await client.connect();
-        await client.db("admin").command({ ping: 1 });
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
-    } finally {
-        // This makes sure that the client will close when you are finished or have a error
-        await client.close();
+  try {
+    await client.connect();
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } catch (err) {
+    if (err.message && err.message.includes("Authentication failed")) {
+      console.error("Error: Authentication failed. Please check your username and password.");
+    } else if (err.message && err.message.includes("failed to connect")) {
+      console.error("Error: Failed to connect to MongoDB. Please check your URI.");
+    } else {
+      console.error("Error:", err.message);
     }
+  } finally {
+    await client.close();
+  }
 }
 
 run().catch(console.dir);
