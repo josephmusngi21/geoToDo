@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -7,10 +7,11 @@ import {
   ScrollView,
 } from "react-native";
 import Task from "./components/Task";
-
 import examples from "./components/tasks.json";
 
 export default function TodayTab() {
+  const [selectedFilter, setSelectedFilter] = useState("All");
+
   const today = new Date();
   const dateString = today.toLocaleDateString(undefined, {
     weekday: "long",
@@ -50,19 +51,31 @@ export default function TodayTab() {
       <View style={styles.collectionContainer}>
         <View style={styles.countContainer}>
           {Object.entries(taskMenus).map(([key, value]) => (
-            <TouchableOpacity key={key} style={styles.task}>
-              <Text style={styles.taskText}>{key}</Text>
+            <TouchableOpacity
+              key={key}
+              style={[
+                styles.task,
+                selectedFilter === key && styles.selectedTask,
+              ]}
+              onPress={() => setSelectedFilter(key)}
+            >
+              <Text
+                style={[
+                  styles.taskText,
+                  selectedFilter === key && styles.selectedTaskText,
+                ]}
+              >
+                {key}
+              </Text>
               <Text style={styles.taskCount}>{value}</Text>
             </TouchableOpacity>
           ))}
         </View>
 
         <ScrollView style={styles.taskContainer}>
-         
-            {examples.map((task, index) => (
-              <Task key={index} task={task} />
-            ))}
-    
+          {tasksByStatus[selectedFilter].map((task, index) => (
+            <Task key={index} task={task} />
+          ))}
         </ScrollView>
       </View>
     </View>
@@ -123,15 +136,26 @@ const styles = StyleSheet.create({
   task: {
     display: "flex",
     flexDirection: "row",
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 10,
+  },
+  selectedTask: {
+    backgroundColor: "#E2EBFA",
   },
   taskText: {
     fontSize: 15,
-    fontWeight: 570,
+    fontWeight: "500",
     paddingHorizontal: 10,
+    color: "black",
+  },
+  selectedTaskText: {
+    color: "#1756D2",
+    fontWeight: "bold",
   },
   taskCount: {
     fontSize: 13,
-    fontWeight: 600,
+    fontWeight: "600",
     color: "#878787",
     marginLeft: 6,
   },
