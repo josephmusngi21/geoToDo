@@ -14,7 +14,7 @@
         "description": "Weekly sync with the development team.",
         "date": "2024-06-11",
         "time": "14:00",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -23,7 +23,7 @@
         "description": "Routine dental check-up and cleaning.",
         "date": "2024-06-12",
         "time": "11:15",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -41,7 +41,7 @@
         "description": "Catch up with mom over the phone.",
         "date": "2024-06-14",
         "time": "19:00",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -59,7 +59,7 @@
         "description": "Attend the morning workout session at the gym.",
         "date": "2024-06-16",
         "time": "07:00",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -68,7 +68,7 @@
         "description": "Follow-up appointment with the physician.",
         "date": "2024-06-17",
         "time": "10:30",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -86,7 +86,7 @@
         "description": "Take the car for scheduled maintenance.",
         "date": "2024-06-19",
         "time": "13:45",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -104,7 +104,7 @@
         "description": "Wash and fold clothes.",
         "date": "2024-06-21",
         "time": "17:30",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -113,7 +113,7 @@
         "description": "Check pantry and fridge for needed items.",
         "date": "2024-06-22",
         "time": "08:45",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -131,7 +131,7 @@
         "description": "Add recent experience to resume.",
         "date": "2024-06-24",
         "time": "15:00",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -140,7 +140,7 @@
         "description": "Pay electricity and internet bills online.",
         "date": "2024-06-25",
         "time": "12:00",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -158,7 +158,7 @@
         "description": "Complete module 3 of the online course.",
         "date": "2024-06-27",
         "time": "22:00",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -167,7 +167,7 @@
         "description": "Practice new chords for 30 minutes.",
         "date": "2024-06-28",
         "time": "16:00",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -185,7 +185,7 @@
         "description": "Watch a new release with friends.",
         "date": "2024-06-30",
         "time": "21:30",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -194,7 +194,7 @@
         "description": "Backup important documents to cloud storage.",
         "date": "2024-07-01",
         "time": "13:00",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -212,7 +212,7 @@
         "description": "Water all indoor and outdoor plants.",
         "date": "2024-07-03",
         "time": "08:00",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -221,7 +221,7 @@
         "description": "Renew borrowed books online.",
         "date": "2024-07-04",
         "time": "11:30",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -239,7 +239,7 @@
         "description": "Buy vegetables and fruits for the week.",
         "date": "2024-07-06",
         "time": "09:15",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -248,7 +248,7 @@
         "description": "Wash and vacuum the car.",
         "date": "2024-07-07",
         "time": "14:30",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
@@ -266,7 +266,7 @@
         "description": "Respond to important emails.",
         "date": "2024-07-09",
         "time": "12:45",
-        "status": "wip",
+        "status": "open",
         "location": null
     },
     {
@@ -275,7 +275,7 @@
         "description": "Morning meditation session.",
         "date": "2024-07-10",
         "time": "07:30",
-        "status": "closed",
+        "status": "open",
         "location": null
     },
     {
