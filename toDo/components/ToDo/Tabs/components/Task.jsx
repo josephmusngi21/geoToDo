@@ -21,13 +21,18 @@ export default function Task({ task }) {
     }
   });
 
-
   const [status, setStatus] = useState(task.status);
+  const [expanded, setExpanded] = useState(false);
 
   const isDone = status === "Closed";
+  const maxDescLength = 10;
+  const isLongDesc = task.description.length > maxDescLength;
+  const displayDescription = !expanded && isLongDesc
+    ? task.description.slice(0, maxDescLength) + "..."
+    : task.description;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, expanded && styles.containerExpanded]}>
       <View style={styles.topContainer}>
         <View style={styles.info}>
           <Text
@@ -38,14 +43,23 @@ export default function Task({ task }) {
           >
             {task.title}
           </Text>
-          <Text
-            style={[
-              styles.description,
-              isDone && styles.descriptionDone,
-            ]}
+          <TouchableOpacity
+            activeOpacity={isLongDesc ? 0.7 : 1}
+            onPress={() => isLongDesc && setExpanded(!expanded)}
           >
-            {task.description}
-          </Text>
+            <Text
+              style={[
+                styles.description,
+                isDone && styles.descriptionDone,
+              ]}
+              numberOfLines={expanded ? undefined : 3}
+            >
+              {displayDescription}
+            </Text>
+            {isLongDesc && !expanded && (
+              <Text style={styles.expandHint}>Tap to expand</Text>
+            )}
+          </TouchableOpacity>
         </View>
         <TouchableOpacity
           style={styles.statusButton}
@@ -78,22 +92,29 @@ const styles = StyleSheet.create({
     boxShadowColor: "#F9F9F9",
     alignSelf: "center",
     marginVertical: 20,
+    overflow: "hidden",
   },
+  // Remove containerExpanded from here, move expansion to topContainer
   topContainer: {
     display: "flex",
     flexDirection: "row",
     width: "95%",
-    height: 70,
+    minHeight: 70,
     justifyContent: "space-between",
     marginHorizontal: 6,
     paddingVertical: 10,
     borderBottomWidth: 1,
     borderColor: "#000",
   },
+  topContainerExpanded: {
+    minHeight: 140, // or any value that fits your expanded content
+    alignItems: "flex-start",
+  },
   info: {
     display: "flex",
     flexDirection: "column",
     marginHorizontal: 14,
+    flex: 1,
   },
   title: {
     fontWeight: "500",
@@ -113,6 +134,11 @@ const styles = StyleSheet.create({
   descriptionDone: {
     textDecorationLine: "line-through",
     color: "#C0C0C0",
+  },
+  expandHint: {
+    color: "#888",
+    fontSize: 12,
+    marginTop: 2,
   },
   statusButton: {
     justifyContent: "center",
