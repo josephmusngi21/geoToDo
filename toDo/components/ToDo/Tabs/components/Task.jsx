@@ -21,38 +21,71 @@ export default function Task({ task }) {
     }
   });
 
-
   const [status, setStatus] = useState(task.status);
+  const [expanded, setExpanded] = useState(false);
 
   const isDone = status === "Closed";
+  const isWip = status === "WIP";
+
+  // Cycle through Open -> WIP -> Closed -> Open ...
+  const nextStatus = () => {
+    if (status === "Open") return setStatus("WIP");
+    if (status === "WIP") return setStatus("Closed");
+    return setStatus("Open");
+  };
+
+  // Description logic
+  const maxDescLength = 120;
+  const isLongDesc = task.description.length > maxDescLength;
+  const shownDescription = !expanded && isLongDesc
+    ? task.description.slice(0, maxDescLength) + "..."
+    : task.description;
+
+  // Container height logic
+  const containerHeight = expanded ? null : 120;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerHeight ? { height: containerHeight } : { minHeight: 120 }]}>
       <View style={styles.topContainer}>
         <View style={styles.info}>
           <Text
             style={[
               styles.title,
               isDone && styles.titleDone,
+              isWip && styles.titleWip,
             ]}
           >
             {task.title}
           </Text>
-          <Text
-            style={[
-              styles.description,
-              isDone && styles.descriptionDone,
-            ]}
+          <TouchableOpacity
+            activeOpacity={isLongDesc ? 0.7 : 1}
+            onPress={() => isLongDesc && setExpanded(e => !e)}
+            style={{ alignSelf: "flex-start" }}
           >
-            {task.description}
-          </Text>
+            <Text
+              style={[
+                styles.description,
+                isDone && styles.descriptionDone,
+                isWip && styles.descriptionWip,
+                isLongDesc && { },
+              ]}
+              numberOfLines={expanded ? undefined : 3}
+            >
+              {shownDescription}
+            </Text>
+          </TouchableOpacity>
         </View>
         <TouchableOpacity
           style={styles.statusButton}
-          onPress={() => setStatus(isDone ? "Open" : "Closed")}
+          onPress={nextStatus}
         >
-          <View style={[styles.circle, isDone && styles.circleFilled]}>
+          <View style={[
+            styles.circle,
+            isDone && styles.circleFilled,
+            isWip && styles.circleWip,
+          ]}>
             {isDone && <Text style={styles.checkmark}>✓</Text>}
+            {isWip && <Text style={styles.wipMark}>…</Text>}
           </View>
         </TouchableOpacity>
       </View>
@@ -72,18 +105,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     width: "92%",
-    height: 120,
     backgroundColor: 'white',
     borderRadius: 10,
     boxShadowColor: "#F9F9F9",
     alignSelf: "center",
     marginVertical: 20,
+    // height is set dynamically
   },
   topContainer: {
     display: "flex",
     flexDirection: "row",
     width: "95%",
-    height: 70,
+    minHeight: 70,
     justifyContent: "space-between",
     marginHorizontal: 6,
     paddingVertical: 10,
@@ -94,30 +127,49 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     marginHorizontal: 14,
+    flex: 1,
+    justifyContent: "center",
+    minHeight: 50,
+    maxWidth: "80%",
   },
   title: {
     fontWeight: "500",
     fontSize: 18,
     color: "#222",
+    maxWidth: "100%",
+    minHeight: 24,
+    lineHeight: 24,
+    overflow: "hidden",
   },
   titleDone: {
     textDecorationLine: "line-through",
     color: "#A8A8A8",
+  },
+  titleWip: {
+    color: "#FFA500", // orange for WIP
   },
   description: {
     fontWeight: "250",
     fontSize: 14,
     marginTop: 3,
     color: "#444",
+    maxWidth: "100%",
+    minHeight: 20,
+    lineHeight: 20,
+    overflow: "hidden",
   },
   descriptionDone: {
     textDecorationLine: "line-through",
     color: "#C0C0C0",
   },
+  descriptionWip: {
+    color: "#FFA500",
+  },
   statusButton: {
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
+    alignSelf: "center",
   },
   circle: {
     width: 28,
@@ -133,10 +185,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#4CAF50",
     borderColor: "#4CAF50",
   },
+  circleWip: {
+    backgroundColor: "#FFA500",
+    borderColor: "#FFA500",
+  },
   checkmark: {
     color: "#fff",
     fontSize: 18,
     fontWeight: "bold",
+  },
+  wipMark: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: -2,
   },
   bottomContainer: {
     display: "flex",
