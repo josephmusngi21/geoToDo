@@ -5,7 +5,8 @@
         "description": "Purchase milk, eggs, and bread from the supermarket.",
         "date": "2024-06-10",
         "time": "09:30",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 2
@@ -13,7 +14,8 @@
         "description": "Weekly sync with the development team.",
         "date": "2024-06-11",
         "time": "14:00",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 3
@@ -21,7 +23,8 @@
         "description": "Routine dental check-up and cleaning.",
         "date": "2024-06-12",
         "time": "11:15",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 4
@@ -29,7 +32,8 @@
         "description": "Finalize and submit the monthly project report.",
         "date": "2024-06-13",
         "time": "16:45",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 5
@@ -37,7 +41,8 @@
         "description": "Catch up with mom over the phone.",
         "date": "2024-06-14",
         "time": "19:00",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 6
@@ -45,7 +50,8 @@
         "description": "Finish reading the last two chapters of the novel.",
         "date": "2024-06-15",
         "time": "21:00",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 7
@@ -53,7 +59,8 @@
         "description": "Attend the morning workout session at the gym.",
         "date": "2024-06-16",
         "time": "07:00",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 8
@@ -61,7 +68,8 @@
         "description": "Follow-up appointment with the physician.",
         "date": "2024-06-17",
         "time": "10:30",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 9
@@ -69,7 +77,8 @@
         "description": "Research and plan the summer vacation itinerary.",
         "date": "2024-06-18",
         "time": "18:00",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 10
@@ -77,7 +86,8 @@
         "description": "Take the car for scheduled maintenance.",
         "date": "2024-06-19",
         "time": "13:45",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 11
@@ -85,7 +95,8 @@
         "description": "Draft and publish a new blog post on productivity.",
         "date": "2024-06-20",
         "time": "20:00",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 12
@@ -93,7 +104,8 @@
         "description": "Wash and fold clothes.",
         "date": "2024-06-21",
         "time": "17:30",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 13
@@ -101,7 +113,8 @@
         "description": "Check pantry and fridge for needed items.",
         "date": "2024-06-22",
         "time": "08:45",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 14
@@ -109,7 +122,8 @@
         "description": "Attend evening yoga session.",
         "date": "2024-06-23",
         "time": "18:30",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 15
@@ -117,7 +131,8 @@
         "description": "Add recent experience to resume.",
         "date": "2024-06-24",
         "time": "15:00",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 16
@@ -125,7 +140,8 @@
         "description": "Pay electricity and internet bills online.",
         "date": "2024-06-25",
         "time": "12:00",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 17
@@ -133,7 +149,8 @@
         "description": "Evening walk in the park with the dog.",
         "date": "2024-06-26",
         "time": "19:30",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 18
@@ -141,7 +158,8 @@
         "description": "Complete module 3 of the online course.",
         "date": "2024-06-27",
         "time": "22:00",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 19
@@ -149,7 +167,8 @@
         "description": "Practice new chords for 30 minutes.",
         "date": "2024-06-28",
         "time": "16:00",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 20
@@ -157,7 +176,8 @@
         "description": "Clean and organize the work desk.",
         "date": "2024-06-29",
         "time": "10:00",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 21
@@ -165,7 +185,8 @@
         "description": "Watch a new release with friends.",
         "date": "2024-06-30",
         "time": "21:30",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 22
@@ -173,7 +194,8 @@
         "description": "Backup important documents to cloud storage.",
         "date": "2024-07-01",
         "time": "13:00",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 23
@@ -181,7 +203,8 @@
         "description": "Prepare meals for the upcoming week.",
         "date": "2024-07-02",
         "time": "17:00",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 24
@@ -189,7 +212,8 @@
         "description": "Water all indoor and outdoor plants.",
         "date": "2024-07-03",
         "time": "08:00",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 25
@@ -197,7 +221,8 @@
         "description": "Renew borrowed books online.",
         "date": "2024-07-04",
         "time": "11:30",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 26
@@ -205,7 +230,8 @@
         "description": "Brainstorm ideas for the new project.",
         "date": "2024-07-05",
         "time": "15:45",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 27
@@ -213,7 +239,8 @@
         "description": "Buy vegetables and fruits for the week.",
         "date": "2024-07-06",
         "time": "09:15",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 28
@@ -221,7 +248,8 @@
         "description": "Wash and vacuum the car.",
         "date": "2024-07-07",
         "time": "14:30",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 29
@@ -229,7 +257,8 @@
         "description": "Buy a birthday gift for Sarah.",
         "date": "2024-07-08",
         "time": "18:15",
-        "status": "open"
+        "status": "open",
+        "location": null
     },
     {
         // Task 30
@@ -237,7 +266,8 @@
         "description": "Respond to important emails.",
         "date": "2024-07-09",
         "time": "12:45",
-        "status": "wip"
+        "status": "wip",
+        "location": null
     },
     {
         // Task 31
@@ -245,7 +275,8 @@
         "description": "Morning meditation session.",
         "date": "2024-07-10",
         "time": "07:30",
-        "status": "closed"
+        "status": "closed",
+        "location": null
     },
     {
         // Task 32
@@ -253,6 +284,7 @@
         "description": "Make a list of groceries for the weekend.",
         "date": "2024-07-11",
         "time": "20:30",
-        "status": "open"
+        "status": "open",
+        "location": null
     }
 ]
