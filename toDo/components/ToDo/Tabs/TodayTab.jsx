@@ -9,31 +9,21 @@ import {
 import Task from "./components/Task";
 import examples from "./components/tasks.json";
 
+const FILTERS = ["All", "Open", "Closed", "WIP"];
+
 export default function TodayTab() {
   const [selectedFilter, setSelectedFilter] = useState("All");
 
-  const today = new Date();
-  const dateString = today.toLocaleDateString(undefined, {
+  const dateString = new Date().toLocaleDateString(undefined, {
     weekday: "long",
     month: "long",
     day: "numeric",
   });
 
-  // Categorize tasks by status
-  const tasksByStatus = {
-    All: examples,
-    Open: examples.filter((task) => task.status.toLowerCase() === "open"),
-    Closed: examples.filter((task) => task.status.toLowerCase() === "closed"),
-    WIP: examples.filter((task) => task.status.toLowerCase() === "wip"),
-  };
-
-  // For the menu counts
-  const taskMenus = {
-    All: tasksByStatus.All.length,
-    Open: tasksByStatus.Open.length,
-    Closed: tasksByStatus.Closed.length,
-    WIP: tasksByStatus.WIP.length,
-  };
+  const filteredTasks = (filter) =>
+    filter === "All"
+      ? examples
+      : examples.filter((task) => task.status.toLowerCase() === filter.toLowerCase());
 
   return (
     <View style={styles.container}>
@@ -42,7 +32,6 @@ export default function TodayTab() {
           <Text style={styles.infoText}>Today&#39;s Tasks</Text>
           <Text style={styles.dateText}>{dateString}</Text>
         </View>
-
         <TouchableOpacity style={styles.addButton}>
           <Text style={styles.addText}>Add Task</Text>
         </TouchableOpacity>
@@ -50,31 +39,31 @@ export default function TodayTab() {
 
       <View style={styles.collectionContainer}>
         <View style={styles.countContainer}>
-          {Object.entries(taskMenus).map(([key, value]) => (
+          {FILTERS.map((filter) => (
             <TouchableOpacity
-              key={key}
+              key={filter}
               style={[
                 styles.task,
-                selectedFilter === key && styles.selectedTask,
+                selectedFilter === filter && styles.selectedTask,
               ]}
-              onPress={() => setSelectedFilter(key)}
+              onPress={() => setSelectedFilter(filter)}
             >
               <Text
                 style={[
                   styles.taskText,
-                  selectedFilter === key && styles.selectedTaskText,
+                  selectedFilter === filter && styles.selectedTaskText,
                 ]}
               >
-                {key}
+                {filter}
               </Text>
-              <Text style={styles.taskCount}>{value}</Text>
+              <Text style={styles.taskCount}>{filteredTasks(filter).length}</Text>
             </TouchableOpacity>
           ))}
         </View>
 
         <ScrollView style={styles.taskContainer}>
-          {tasksByStatus[selectedFilter].map((task, index) => (
-            <Task key={index} task={task} />
+          {filteredTasks(selectedFilter).map((task, idx) => (
+            <Task key={idx} task={task} />
           ))}
         </ScrollView>
       </View>
@@ -84,13 +73,11 @@ export default function TodayTab() {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
     flexDirection: "column",
     width: "93%",
     marginHorizontal: 10,
   },
   infoContainer: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -125,7 +112,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   countContainer: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -134,7 +120,6 @@ const styles = StyleSheet.create({
     height: 38,
   },
   task: {
-    display: "flex",
     flexDirection: "row",
     paddingVertical: 4,
     paddingHorizontal: 8,
@@ -164,18 +149,8 @@ const styles = StyleSheet.create({
     height: 400,
     flex: 1,
   },
-  scrollContent: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    flex: 1,
-  },
   collectionContainer: {
-    display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
     height: 700,
