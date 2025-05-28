@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function Task({ task }) {
+export default function Task({ task, onStatusChange }) {
   if (!task) {
     task = {
       title: "Task Title",
@@ -21,17 +21,24 @@ export default function Task({ task }) {
     }
   });
 
-  const [status, setStatus] = useState(task.status);
   const [expanded, setExpanded] = useState(false);
 
+  // Use local state for status to ensure visual updates
+  const [localStatus, setLocalStatus] = useState(task.status);
+  const status = localStatus;
   const isDone = status === "Closed";
   const isWip = status === "WIP";
 
-  // Cycle through Open -> WIP -> Closed -> Open ...
+  // Notify parent to update status, so tabs can react
   const nextStatus = () => {
-    if (status === "Open") return setStatus("WIP");
-    if (status === "WIP") return setStatus("Closed");
-    return setStatus("Open");
+    let newStatus;
+    if (status === "Open") newStatus = "WIP";
+    else if (status === "WIP") newStatus = "Closed";
+    else newStatus = "Open";
+    setLocalStatus(newStatus);
+    if (typeof onStatusChange === "function") {
+      onStatusChange(newStatus);
+    }
   };
 
   // Description logic
@@ -67,7 +74,7 @@ export default function Task({ task }) {
                 styles.description,
                 isDone && styles.descriptionDone,
                 isWip && styles.descriptionWip,
-                isLongDesc && { },
+                isLongDesc && {},
               ]}
               numberOfLines={expanded ? undefined : 3}
             >
@@ -83,9 +90,36 @@ export default function Task({ task }) {
             styles.circle,
             isDone && styles.circleFilled,
             isWip && styles.circleWip,
+            !isDone && !isWip && { borderColor: "#A8A8A8", backgroundColor: "#fff" }
           ]}>
-            {isDone && <Text style={styles.checkmark}>✓</Text>}
-            {isWip && <Text style={styles.wipMark}>…</Text>}
+            {/* Visual indicator for status */}
+            {status === "Open" && (
+              <Text style={{ color: "#A8A8A8", fontSize: 18, fontWeight: "bold" }}>○</Text>
+            )}
+            {isWip && (
+              <Text style={styles.wipMark}>…</Text>
+            )}
+            {isDone && (
+              <Text style={styles.checkmark}>✓</Text>
+            )}
+          </View>
+          {/* Status stepper below the circle */}
+          <View style={{ flexDirection: "row", marginTop: 6, alignItems: "center" }}>
+            <View style={{
+              width: 8, height: 8, borderRadius: 4,
+              backgroundColor: status === "Open" ? "#A8A8A8" : "#E0E0E0",
+              marginHorizontal: 2
+            }} />
+            <View style={{
+              width: 8, height: 8, borderRadius: 4,
+              backgroundColor: status === "WIP" ? "#FFA500" : "#E0E0E0",
+              marginHorizontal: 2
+            }} />
+            <View style={{
+              width: 8, height: 8, borderRadius: 4,
+              backgroundColor: status === "Closed" ? "#4CAF50" : "#E0E0E0",
+              marginHorizontal: 2
+            }} />
           </View>
         </TouchableOpacity>
       </View>
