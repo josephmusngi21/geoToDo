@@ -35,10 +35,10 @@ export default function Task({ task, onStatusChange }) {
     if (status === "Open") newStatus = "WIP";
     else if (status === "WIP") newStatus = "Closed";
     else newStatus = "Open";
-    setLocalStatus(newStatus);
     if (typeof onStatusChange === "function") {
       onStatusChange(newStatus);
     }
+    setLocalStatus(newStatus);
   };
 
   // Description logic
