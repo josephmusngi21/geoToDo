@@ -34,6 +34,22 @@ export default function TodayTab() {
     }
   }
 
+  // Update a task's status in the backend
+  async function updateTaskStatus(taskId, newStatus) {
+    try {
+      const response = await fetch(`http://localhost:3000/api/runs/${taskId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: newStatus }),
+      });
+      if (!response.ok) throw new Error("Failed to update task status");
+      return await response.json();
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
   useEffect(() => {
     fetchRuns().then((data) => {
       if (Array.isArray(data)) {
@@ -41,14 +57,18 @@ export default function TodayTab() {
       }
     });
   }, []);
-
+  
   // Handler to update a task's status
-  const handleStatusChange = (idx, newStatus) => {
+  const handleStatusChange = async (idx, newStatus) => {
+    const task = tasks[idx];
+    // Optimistically update UI
     setTasks((prevTasks) =>
-      prevTasks.map((task, i) =>
-        i === idx ? { ...task, status: newStatus } : task
+      prevTasks.map((t, i) =>
+        i === idx ? { ...t, status: newStatus } : t
       )
     );
+    // Update backend
+    await updateTaskStatus(task.id, newStatus);
   };
 
   const filteredTasks = (filter) =>
