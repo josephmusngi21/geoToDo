@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -22,6 +22,26 @@ export default function TodayTab() {
     day: "numeric",
   });
 
+  //Fetch runs from the backend API
+  async function fetchRuns() {
+    try {
+      const response = await fetch("http://localhost:3000/api/runs");
+      if (!response.ok) throw new Error("Failed to fetch runs");
+      return await response.json();
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+
+  useEffect(() => {
+    fetchRuns().then((data) => {
+      if (Array.isArray(data)) {
+        setTasks(data);
+      }
+    });
+  }, []);
+
   // Handler to update a task's status
   const handleStatusChange = (idx, newStatus) => {
     setTasks((prevTasks) =>
@@ -34,7 +54,11 @@ export default function TodayTab() {
   const filteredTasks = (filter) =>
     filter === "All"
       ? tasks
-      : tasks.filter((task) => task.status.toLowerCase() === filter.toLowerCase());
+      : tasks.filter(
+          (task) =>
+            typeof task.status === "string" &&
+            task.status.toLowerCase() === filter.toLowerCase()
+        );
 
   return (
     <View style={styles.container}>
@@ -67,7 +91,9 @@ export default function TodayTab() {
               >
                 {filter}
               </Text>
-              <Text style={styles.taskCount}>{filteredTasks(filter).length}</Text>
+              <Text style={styles.taskCount}>
+                {filteredTasks(filter).length}
+              </Text>
             </TouchableOpacity>
           ))}
         </View>
