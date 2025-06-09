@@ -1,10 +1,12 @@
 require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
 const uri = process.env.MONGO_URI || null;
 
 if (!uri) {
-  console.error("Error: MONGODB_URI environment variable is not set.");
+  console.error("Error: MONGO_URI environment variable is not set.");
   process.exit(1);
 }
 
@@ -16,22 +18,23 @@ const client = new MongoClient(uri, {
   },
 });
 
-async function run() {
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get('/api/runs', async (req, res) => {
   try {
     await client.connect();
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    const runs = await client.db("todo").collection("todo_list").find({}).toArray();
+    res.json(runs);
   } catch (err) {
-    if (err.message && err.message.includes("Authentication failed")) {
-      console.error("Error: Authentication failed. Please check your username and password.");
-    } else if (err.message && err.message.includes("failed to connect")) {
-      console.error("Error: Failed to connect to MongoDB. Please check your URI.");
-    } else {
-      console.error("Error:", err.message);
-    }
+    res.status(500).json({ error: err.message });
   } finally {
     await client.close();
   }
-}
+});
 
-run().catch(console.dir);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
