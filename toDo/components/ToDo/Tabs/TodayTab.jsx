@@ -13,6 +13,8 @@ const FILTERS = ["All", "Open", "Closed", "WIP"];
 
 export default function TodayTab() {
   const [selectedFilter, setSelectedFilter] = useState("All");
+  // Store tasks in state so updates trigger re-render
+  const [tasks, setTasks] = useState(examples);
 
   const dateString = new Date().toLocaleDateString(undefined, {
     weekday: "long",
@@ -20,10 +22,19 @@ export default function TodayTab() {
     day: "numeric",
   });
 
+  // Handler to update a task's status
+  const handleStatusChange = (idx, newStatus) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task, i) =>
+        i === idx ? { ...task, status: newStatus } : task
+      )
+    );
+  };
+
   const filteredTasks = (filter) =>
     filter === "All"
-      ? examples
-      : examples.filter((task) => task.status.toLowerCase() === filter.toLowerCase());
+      ? tasks
+      : tasks.filter((task) => task.status.toLowerCase() === filter.toLowerCase());
 
   return (
     <View style={styles.container}>
@@ -63,7 +74,15 @@ export default function TodayTab() {
 
         <ScrollView style={styles.taskContainer}>
           {filteredTasks(selectedFilter).map((task, idx) => (
-            <Task key={idx} task={task} />
+            <Task
+              key={tasks.indexOf(task)}
+              task={task}
+              onStatusChange={(newStatus) => {
+                // Find the index in the full tasks array
+                const realIdx = tasks.indexOf(task);
+                handleStatusChange(realIdx, newStatus);
+              }}
+            />
           ))}
         </ScrollView>
       </View>
