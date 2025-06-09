@@ -1,6 +1,5 @@
 [
     {
-        // Task 1
         "title": "Buy Groceries",
         "description": "Purchase milk, eggs, and bread from the supermarket.",
         "date": "2024-06-10",
@@ -9,7 +8,6 @@
         "location": null
     },
     {
-        // Task 2
         "title": "Team Meeting",
         "description": "Weekly sync with the development team.",
         "date": "2024-06-11",
@@ -18,7 +16,6 @@
         "location": null
     },
     {
-        // Task 3
         "title": "Dentist Appointment",
         "description": "Routine dental check-up and cleaning.",
         "date": "2024-06-12",
@@ -27,7 +24,6 @@
         "location": null
     },
     {
-        // Task 4
         "title": "Submit Project Report",
         "description": "Finalize and submit the monthly project report.",
         "date": "2024-06-13",
@@ -36,7 +32,6 @@
         "location": null
     },
     {
-        // Task 5
         "title": "Call Mom",
         "description": "Catch up with mom over the phone.",
         "date": "2024-06-14",
@@ -45,7 +40,6 @@
         "location": null
     },
     {
-        // Task 6
         "title": "Read Book",
         "description": "Finish reading the last two chapters of the novel.",
         "date": "2024-06-15",
@@ -54,7 +48,6 @@
         "location": null
     },
     {
-        // Task 7
         "title": "Gym Session",
         "description": "Attend the morning workout session at the gym.",
         "date": "2024-06-16",
@@ -63,7 +56,6 @@
         "location": null
     },
     {
-        // Task 8
         "title": "Doctor Follow-up",
         "description": "Follow-up appointment with the physician.",
         "date": "2024-06-17",
@@ -72,7 +64,6 @@
         "location": null
     },
     {
-        // Task 9
         "title": "Plan Vacation",
         "description": "Research and plan the summer vacation itinerary.",
         "date": "2024-06-18",
@@ -81,7 +72,6 @@
         "location": null
     },
     {
-        // Task 10
         "title": "Car Service",
         "description": "Take the car for scheduled maintenance.",
         "date": "2024-06-19",
@@ -90,7 +80,6 @@
         "location": null
     },
     {
-        // Task 11
         "title": "Write Blog Post",
         "description": "Draft and publish a new blog post on productivity.",
         "date": "2024-06-20",
@@ -99,7 +88,6 @@
         "location": null
     },
     {
-        // Task 12
         "title": "Laundry",
         "description": "Wash and fold clothes.",
         "date": "2024-06-21",
@@ -108,7 +96,6 @@
         "location": null
     },
     {
-        // Task 13
         "title": "Grocery Inventory",
         "description": "Check pantry and fridge for needed items.",
         "date": "2024-06-22",
@@ -117,7 +104,6 @@
         "location": null
     },
     {
-        // Task 14
         "title": "Yoga Class",
         "description": "Attend evening yoga session.",
         "date": "2024-06-23",
@@ -126,7 +112,6 @@
         "location": null
     },
     {
-        // Task 15
         "title": "Update Resume",
         "description": "Add recent experience to resume.",
         "date": "2024-06-24",
@@ -135,7 +120,6 @@
         "location": null
     },
     {
-        // Task 16
         "title": "Pay Bills",
         "description": "Pay electricity and internet bills online.",
         "date": "2024-06-25",
@@ -144,7 +128,6 @@
         "location": null
     },
     {
-        // Task 17
         "title": "Walk the Dog",
         "description": "Evening walk in the park with the dog.",
         "date": "2024-06-26",
@@ -153,7 +136,6 @@
         "location": null
     },
     {
-        // Task 18
         "title": "Online Course",
         "description": "Complete module 3 of the online course.",
         "date": "2024-06-27",
@@ -162,7 +144,6 @@
         "location": null
     },
     {
-        // Task 19
         "title": "Guitar Practice",
         "description": "Practice new chords for 30 minutes.",
         "date": "2024-06-28",
@@ -171,7 +152,6 @@
         "location": null
     },
     {
-        // Task 20
         "title": "Organize Desk",
         "description": "Clean and organize the work desk.",
         "date": "2024-06-29",
@@ -180,7 +160,6 @@
         "location": null
     },
     {
-        // Task 21
         "title": "Movie Night",
         "description": "Watch a new release with friends.",
         "date": "2024-06-30",
@@ -189,7 +168,6 @@
         "location": null
     },
     {
-        // Task 22
         "title": "Backup Files",
         "description": "Backup important documents to cloud storage.",
         "date": "2024-07-01",
@@ -198,7 +176,6 @@
         "location": null
     },
     {
-        // Task 23
         "title": "Meal Prep",
         "description": "Prepare meals for the upcoming week.",
         "date": "2024-07-02",
@@ -207,7 +184,6 @@
         "location": null
     },
     {
-        // Task 24
         "title": "Water Plants",
         "description": "Water all indoor and outdoor plants.",
         "date": "2024-07-03",
@@ -216,7 +192,6 @@
         "location": null
     },
     {
-        // Task 25
         "title": "Renew Library Books",
         "description": "Renew borrowed books online.",
         "date": "2024-07-04",
@@ -225,7 +200,6 @@
         "location": null
     },
     {
-        // Task 26
         "title": "Brainstorm Ideas",
         "description": "Brainstorm ideas for the new project.",
         "date": "2024-07-05",
@@ -234,7 +208,6 @@
         "location": null
     },
     {
-        // Task 27
         "title": "Grocery Shopping",
         "description": "Buy vegetables and fruits for the week.",
         "date": "2024-07-06",
@@ -243,7 +216,6 @@
         "location": null
     },
     {
-        // Task 28
         "title": "Car Wash",
         "description": "Wash and vacuum the car.",
         "date": "2024-07-07",
@@ -252,7 +224,6 @@
         "location": null
     },
     {
-        // Task 29
         "title": "Birthday Gift",
         "description": "Buy a birthday gift for Sarah.",
         "date": "2024-07-08",
@@ -261,7 +232,6 @@
         "location": null
     },
     {
-        // Task 30
         "title": "Check Emails",
         "description": "Respond to important emails.",
         "date": "2024-07-09",
@@ -270,7 +240,6 @@
         "location": null
     },
     {
-        // Task 31
         "title": "Meditation",
         "description": "Morning meditation session.",
         "date": "2024-07-10",
@@ -279,7 +248,6 @@
         "location": null
     },
     {
-        // Task 32
         "title": "Grocery List",
         "description": "Make a list of groceries for the weekend.",
         "date": "2024-07-11",
